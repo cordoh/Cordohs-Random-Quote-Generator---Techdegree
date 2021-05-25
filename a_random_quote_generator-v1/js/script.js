@@ -64,10 +64,9 @@ const quotes = [
 function getRandomQuote() {
   let randomNumber = Math.floor(Math.random() * (quotes.length) );
   let randomQuote = quotes[randomNumber];
-  console.log(randomNumber);
-  console.log(randomQuote);
+  // console.log(randomNumber);
+  // console.log(randomQuote);
   return randomQuote;
-  
 }
 
 getRandomQuote();
@@ -75,6 +74,25 @@ getRandomQuote();
 /***
  * `printQuote` function
 ***/
+function printQuote() {
+  let chosenQuote = getrandomQuote();
+  let html = `<p class='quote'> ${randomQuote.quote} </p>`;
+  html += `<p class='source'> ${randomQuote.source}`;
+
+  if (randomQuote.citation) {
+    html += `<span class='citation'> ${randomQuote.citation} </span>`;
+    }
+
+  if (randomQuote.year) {
+    html += `<span class='year'> ${randomQuote.year} </span>`;
+    }
+
+    html += `</p>`;
+
+    document.getElementById('quote-box').innerHTML = html;
+    return html;
+}
+
 
 
 
@@ -83,4 +101,4 @@ getRandomQuote();
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-// document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
