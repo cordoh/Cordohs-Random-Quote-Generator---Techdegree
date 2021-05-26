@@ -8,7 +8,8 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * `quotes` array 
+ * List of African Proverbs
+ * Quotes, Source, Citation, and Year
 ***/
 const quotes = [
   {
@@ -59,7 +60,9 @@ const quotes = [
 
 
 /***
- * `getRandomQuote` function
+ * Function to choose one random quote
+ * Random number generates a number between 1-10
+ * Each number 1-10 is associated with a quote
 ***/
 function getRandomQuote() {
   let randomNumber = Math.floor(Math.random() * (quotes.length) );
@@ -72,19 +75,20 @@ function getRandomQuote() {
 getRandomQuote();
 
 /***
- * `printQuote` function
+ * The chose quote gets printed to the page
+ * Depending on the information that each quote has, that also will display on the page.
 ***/
 function printQuote() {
   let chosenQuote = getRandomQuote();
-  let html = `<p class='quote'> ${randomQuote.quote} </p>`;
-  html += `<p class='source'> ${randomQuote.source}`;
+  let html = `<p class='quote'> ${chosenQuote.quote} </p>`;
+  html += `<p class='source'> ${chosenQuote.source}`;
 
-  if (randomQuote.citation) {
-    html += `<span class='citation'> ${randomQuote.citation} </span>`;
+  if (chosenQuote.citation) {
+    html += `<span class='citation'> ${chosenQuote.citation} </span>`;
     }
 
-  if (randomQuote.year) {
-    html += `<span class='year'> ${randomQuote.year} </span>`;
+  if (chosenQuote.year) {
+    html += `<span class='year'> ${chosenQuote.year} </span>`;
     }
 
     html += `</p>`;
