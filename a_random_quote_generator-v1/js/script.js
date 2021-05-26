@@ -75,7 +75,7 @@ getRandomQuote();
  * `printQuote` function
 ***/
 function printQuote() {
-  let chosenQuote = getrandomQuote();
+  let chosenQuote = getRandomQuote();
   let html = `<p class='quote'> ${randomQuote.quote} </p>`;
   html += `<p class='source'> ${randomQuote.source}`;
 
